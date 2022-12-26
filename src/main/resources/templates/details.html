@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link th:href="@{css/main.css}" rel="stylesheet" />
+  <title>Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous" />
+</head>
+<body>
+<h1 align="center">Your details </h1>
+<div align="center">
+  <table class="table table-md table-bordered">
+    <tr style="text-align: center; vertical-align: middle">
+    <div>
+    <th>First Name: </th>
+    </div>
+      <th>Last Name: </th>
+    <th>Account Number: </th>
+      <th>Balance: </th>
+      <th>Credit: </th>
+    </tr>
+    <tbody>
+    <tr th:each="customer:${customers}">
+      <td th:text="${customer.firstName}"></td>
+      <td th:text="${customer.lastName}"></td>
+      <td th:text="${customer.accountNumber}"></td>
+      <td th:text="${customer.balance}"></td>
+      <td th:text="${customer.credit}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <div align="center">
+    <a th:href="@{/homepage}">Go back</a>
+  </div>
+</div>
+</body>
+</html>

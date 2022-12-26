@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+</head>
+<body>
+<div align="center">
+  <h1>To make a deposit please enter amount and password</h1>
+  <div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+  <form action="#" th:action="@{/depositsave}" method="post" th:object="${customer}">
+    <label>Amount: </label>
+    <input type="number" step="0.01" th:field="*{amount}"/>
+    <br>
+    <label>Type password to confirm: </label>
+    <input type="password" th:field="*{password}"/>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div align="center">
+  <a th:href="@{/homepage}">Go back</a>
+</div>
+</body>
+</html>

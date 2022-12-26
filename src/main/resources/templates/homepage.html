@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link th:href="@{css/main.css}" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8">
+    <div align="center">
+
+        <title>welcome</title>
+    </div>
+
+</head>
+<body>
+    <div align="center">
+        <h1 th:text="'Welcome ' + ${firstname} + ' ' + ${lastname}"></h1>
+    <br>
+        <br>
+        <a th:href="@{/details}">Print details</a>
+        <br>
+        <a th:href="@{/deposit}">Deposit</a>
+        <br>
+        <a th:href="@{/withdraw}">Withdraw</a>
+        <br>
+        <br>
+    <br>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+    </form>
+    </div>
+</body>
+</html>
